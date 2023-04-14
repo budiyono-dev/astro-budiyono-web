@@ -1,0 +1,24 @@
+---
+export interface Props {
+	tags: Array<string>;
+}
+
+const { tags } = Astro.props;
+---
+
+<div class="div-tags">
+	{
+		tags.map(tag=><span class="tags">{tag}</span>)
+	}
+</div>
+
+<style>
+.tags {
+ background-color: lightgrey;
+ border-radius: 4px;
+ padding: 3px 9px;
+}
+.div-tags{
+  margin-top: 5px;
+}
+</style>
