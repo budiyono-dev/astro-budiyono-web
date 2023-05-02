@@ -10,8 +10,9 @@ const posts = (await getCollection('blog', 'news')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-const post = await getCollection('blog', ({id})=> id.startsWith('id'))
-console.table(post,"pos")
+const post = await getCollection('blog', ({id})=> id.startsWith('en'))
+const posids = post.map(d=> d.data.title)
+console.table(posids)
 ---
 
 <!DOCTYPE html>
